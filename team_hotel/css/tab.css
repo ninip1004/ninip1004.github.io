@@ -1,0 +1,126 @@
+.membership-content {
+}
+.membership-box1 {
+    width: 100%;
+    height: 160px;
+    text-align: center;
+    margin-top: 160px;
+}
+.membership-box1 button{
+    font-size: 20px;color: white;
+    border-left: none;border-right: none;
+    border-top: none;border-bottom: 2px solid white;
+    background: none; 
+    padding: 10px;
+    margin: 10px;
+}
+.membership-box1 p{
+    font-size: 14px;
+    font-weight: 100;
+}
+.tablink {
+    background-color: #242424;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.membership{
+}
+.membership > div{
+    color: white;
+    height: 450px;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin-top:  80px;
+}
+.membership > div > h3{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.membership > div > div{
+    box-sizing: border-box;
+    width: 1000px;
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.membership > div > div .card-img{
+    width: 40%;
+    padding: 70px 0;
+}
+.membership > div > div .card-img img{
+    width: 100%;
+}
+.membership > div > div .card-text{
+    width: 60%;
+    height: 350px;
+    margin: 20px 0;
+    
+}
+.membership > div > div .card-text > ul{
+    width: 100%;
+    height: 200px;
+    text-align: left;
+    line-height: 40px; 
+}
+.membership > div > div .card-text > ul > li{
+    display: inline-block;
+    width: 40%;
+    height: 150px;
+    margin-left: 50px;
+    border-top: 0.1px solid white;
+    
+}
+.membership > div > div .card-text > ul > li > ul li:nth-child(1){
+    font-size: 1.1rem;
+}
+.membership > div > div .card-text > ul > li > ul li:nth-child(2){
+    font-size: 2rem;
+}
+.membership > div > div .card-text > ul > li > ul li:nth-child(3){
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5); 
+}
+#premier {
+    background-color: #34464e;
+}
+
+#gold {
+    background-color: #433539;
+}
+
+#platinum {
+    background-color: #143545;
+}
+
+#black {
+    background-color: #1a171e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+.reservation{
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        width: 1400px;
+        padding: 50px;
+        position: absolute;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left: 50%;
+    z-index: 15;
+
+    }
+    /*reservation-room membership dining/hotel */
+    .reservation div > select{
+        border: none;
+        outline: none;
+        background: none;
+        color: white;
+    }
+    .reservation div > select option{
+        background: white;
+        color: #161616;font-size: 1rem;padding: 5px;
+    }
+    /*datepicker*/
+    
+    .calender input{
+            border: none;
+            outline: none;
+            background: none;
+            color: white;
+    }   
+    /*reservation-number*/
+    .reservation-num{
+            display: flex;
+            width: 240px;
+            justify-content: space-between;
+        }
+        .reservation-num div{
+            width: 80px;
+        }
+        .reservation-num div p{
+            font-size: 12px;
+        }
+        input::-webkit-outer-spin-button, 
+        input::-webkit-inner-spin-button {
+            margin: 0;
+            -webkit-appearance: button;
+        }
+        .reservation-num div input{
+            margin-left: 15px;
+            width: 35px;
+            border: none;
+            outline: none;
+            background: none;
+            color: white;
+            text-shadow: 0 0 0 white;
+        }
+    /*예약확인*/
+    .reservation button{
+    padding: 10px;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;
+    width: 120px;
+    }
+
+.reservation button:hover{
+    background: white;
+    border: 2px solid white;
+    color: #242424;
+}

@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-total {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 1920px;
+    padding: 30px 0;
+    height: 100px;
+    position: fixed;
+    z-index: 90;
+}
+
+.nav-total {
+    width: 100px;
+    height: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 1870px;
+    height: 100px;
+}
+
+.header > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > div > div > a > span {
+    transform: translate(5px, 5px);
+    font-size: 22px;
+}
+
+.nav-total .menubtn {
+    box-sizing: border-box;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    padding: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    z-index: 99;
+    position: relative;
+}
+
+.nav-total .menubtn .menubtn-1 {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-total .menubtn .menubtn-1 .bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 7px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -7px) rotate(45deg);
+}
+
+.ham-menu {
+    background: #1f1f1f;
+    height: 1000px;
+    width: 300px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+}
+
+
+nav {
+    width: 150px;
+    height: 1000px;
+    margin: 0px auto;
+    margin-top: 100px;
+}
+
+.menu {
+    
+}
+
+.menu > li {
+    padding: 5px 0;
+    width: 150px;
+    background: #1f1f1f;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.menu li > a{
+    color: #98942d;
+    font-weight: bold;
+    font-size: 1.3rem
+}
+
+
+
+.menu li .sub {
+    display: none;
+    /*서브 처음에 안보이게*/
+    /*해당 메인메뉴의 아래에 서브메뉴가 오도록 함*/
+    /*위로 올리기*/
+    width: 100%;
+    margin-top: 5px;
+    background: #1f1f1f;
+
+}
+
+.menu li:hover .sub {
+    display: block;
+    /*메인에 호버하면 서브 나타남*/
+}
+
+.sub li {
+    padding: 5px 0
+}
+
+.menu > li > .sub > li > a {
+    color: #aaa;
+    font-size: 1.1rem;
+    font-weight: 400;
+    
+}
+
+
+
+.header > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .header1 {
+    width: 200px;
+    height: 50px;
+}
+
+.header .header2 {
+    margin-left: 50px;
+    height: 70px;
+    width: 300px;
+}
+
+.header .header2 img {
+    width: 300px;
+    height: 70px;
+}
+
+.header .header3 {
+    width: 300px;
+    height: 50px;
+    margin-right: 50px;
+}
+
+.header .header3 > div > button {
+    padding: 10px;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;transition: all 0.3s;
+}
+
+.header .header3 > div > button:hover {
+    background: white;
+    border: 2px solid white;
+    color: #242424;
+}
+
+.header > div > div {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100%;
+    padding: 5px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.header > div > div > a{}
+.header > div > div > a:hover{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*.under-line:hover{
+    border-bottom: 2px solid white;
+    transition: ease-in-out;
+    
+}*/

@@ -1,0 +1,90 @@
+ .package-content {
+     height: 650px;
+     width: 1600px;
+     display: flex;
+     justify-content: space-between;
+     margin: 0 auto;
+ }
+
+ .package-box1 {
+     width: 400px;
+     height: 650px;
+     
+
+ }
+
+ .package-text {
+     position: relative;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: left;
+ }
+
+ /*패키지 텍스트 박스 시작*/
+ .package-text h2 {
+     font-size: 3rem;
+     text-transform: uppercase;
+     margin-bottom: 40px;
+     
+     /*line-height: 60px;*/
+
+ }
+
+ .package-text > p {
+     line-height: 30px;
+ }
+
+ /*패키지 텍스트 박스 끝*/
+
+
+ .package-box2 {
+     position: relative;
+     width: 400px;
+     height: 650px
+ }
+
+ /*.image {
+     display: block;
+     width: 400px;
+     height: 650px;
+ }
+**/
+ .overlay {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background-color: rgba(0, 0, 0, 0.5);
+     overflow: hidden;
+     width: 0;
+     height: 100%;
+     transition: 0.5s ease;
+ }
+
+ .package-box2:hover .overlay {
+     width: 400px;
+     height: 650px;
+ }
+
+.overlay > div{
+    width: 350px; height: 350px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+.overlay > div > h3{
+    margin-top: 50px;
+}
+.overlay > div > p{
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.overlay > div > button {
+    margin-top: 70px;
+    font-size: 20px;color: white;
+    border-left: none;border-right: none;
+    border-top: none;border-bottom: 2px solid white;
+    background: none; padding: 10px;
+ }

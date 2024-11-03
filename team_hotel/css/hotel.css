@@ -1,0 +1,446 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .w {
+            width: 1920px;
+            margin: 0 auto;
+            color: #242424;
+            font-family: 'Lora', 'Noto Sans KR', sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #242424;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        /*main img*/
+        .main {
+            background: url(img/hotel-main.jpg);
+            width: 1920px;
+            height: 855px;
+            position: relative;
+            top: 100px;
+        }
+
+        .main .main-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 1200px;
+        }
+
+        .main .main-text p {
+            font-size: 1.3rem;
+        }
+
+        .main .main-text h1 {
+            font-size: 5.7rem;
+        }
+
+        /*text-box*/
+        .text {
+            width: 1400px;
+            margin: 50px auto;
+            height: 450px;
+        }
+
+        .text .text1 {
+            box-sizing: border-box;
+            height: 150px;
+            position: relative;
+            top: 100px;
+        }
+
+        .text .text1 h3 {
+            margin: 20px 0;
+        }
+
+        .text .text1 p {
+            margin: 10px 0;
+        }
+
+        .text .text2 {
+            box-sizing: border-box;
+            height: 200px;
+            position: relative;
+            top: 120px;
+        }
+
+        .text .text2 .text2-1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text .text2 .text2-1 h4 {
+            font-size: 5rem;
+        }
+
+        .text .text2 .text2-1 .text2-hr1 {
+            height: 1px;
+            background: #242424;
+            width: 40%;
+            position: relative;
+            top: 60px;
+        }
+
+        .text .text2 .text2-2 {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .text .text2 .text2-2 .text2-hr2 {
+            height: 1px;
+            background: #242424;
+            width: 65%;
+            position: relative;
+            top: 10px;
+        }
+
+        /*history*/
+        .story {
+            background: #242424;
+            height: 800px;
+            width: 100%;
+            display: flex;
+        }
+
+        .story .story-text {
+            width: 40%;
+        }
+
+        .story .story-text .story-text-1 {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -60%);
+            width: 70%;
+            height: 300px;
+            color: white;
+        }
+
+        .story .story-text .story-text-1 p {
+            font-size: ;
+            margin-top: 20px;
+            line-height: 3;
+        }
+
+        .story .story-img {
+            width: 60%;
+            height: 100%;
+            position: relative;
+        }
+
+        .story .story-img div:nth-child(1) img {
+            width: 90%;
+            height: 90%;
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            z-index: 2;
+        }
+
+        .story .story-img div:nth-child(2) {
+            width: 90%;
+            height: 90%;
+            background: #5d5d5d;
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+        }
+
+        .swiper-slide {
+            width: 1600px;
+            margin: 50px auto;
+            padding: 50px;
+        }
+
+        /*package*/
+        .package-box {
+            height: 650px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .package-box .package-box1 {
+            width: 400px;
+            height: 650px;
+            background-color: #f3f3f3;
+        }
+
+        .package-box .package-box1 .package-text {
+            position: relative;
+            width: 250px;
+            top: 50%;
+            transform: translate(10%, -50%);
+            text-align: left;
+        }
+
+        .package-box .package-box1 p {
+            margin: 15px 0;
+            line-height: 2;
+        }
+
+        .package-box .package-box2 {
+            position: relative;
+            width: 400px;
+            height: 650px;
+            color: white;
+        }
+
+        .image {
+            display: block;
+            width: 400px;
+            height: 650px;
+        }
+
+        .package-box2 .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .5s ease;
+        }
+
+        .package-box2:hover .overlay {
+            width: 400px;
+            height: 650px;
+        }
+
+        .overlay > div {
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay > div > h3 {
+            margin-top: 50px;
+        }
+
+        .overlay > div > p {
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .overlay > div > button {
+            margin-top: 70px;
+            font-size: 20px;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-bottom: 2px solid white;
+            background: none;
+            padding: 10px;
+        }
+
+        .overlay > div > button a {
+            color: white;
+        }
+
+        /*experience*/
+        .experience {
+            width: 1600px;
+            margin: 50px auto;
+            padding: 50px;
+            height: 2100px;
+
+        }
+
+        .experience h2 {
+            padding-left: 50px;
+        }
+
+        .experience .experience-total {
+            position: relative;
+            margin: 20px 0;
+            height: 2000px;
+        }
+
+        /*experience-1*/
+        .experience .experience-total .experience-1 {
+            box-sizing: border-box;
+            width: 54%;
+            height: 650px;
+            padding: 30px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .experience .experience-total .experience-1 div:nth-child(1) {
+            max-width: 95%;
+            height: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .experience .experience-total .experience-1 div:nth-child(1) img {
+            transition: all 0.5s linear;
+            width: 96%;
+        }
+
+        .experience .experience-total .experience-1 div:nth-child(1):hover img {
+            transform: scale(1.05);
+        }
+
+        /*experience-2*/
+        .experience .experience-total .experience-2 {
+            box-sizing: border-box;
+            width: 54%;
+            height: 650px;
+            padding: 30px;
+            position: absolute;
+            bottom: 650px;
+            left: 0px;
+        }
+
+        .experience .experience-total .experience-2 div:nth-child(1) {
+            max-width: 95%;
+            height: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .experience .experience-total .experience-2 div:nth-child(1) img {
+            transition: all 0.5s linear;
+            width: 96%;
+        }
+
+        .experience .experience-total .experience-2 div:nth-child(1):hover img {
+            transform: scale(1.05);
+        }
+
+        /*experience-3*/
+        .experience .experience-total .experience-3 {
+            box-sizing: border-box;
+            width: 54%;
+            height: 650px;
+            padding: 30px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        .experience .experience-total .experience-3 div:nth-child(1) {
+            max-width: 95%;
+            height: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .experience .experience-total .experience-3 div:nth-child(1) img {
+            transition: all 0.5s linear;
+            width: 96%;
+        }
+
+        .experience .experience-total .experience-3 div:nth-child(1):hover img {
+            transform: scale(1.05);
+        }
+
+        /*experience-4*/
+        .experience .experience-total .experience-4 {
+            box-sizing: border-box;
+            width: 44%;
+            height: 950px;
+            padding: 30px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        .experience .experience-total .experience-4 div:nth-child(1) {
+            max-width: 95%;
+            height: 700px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .experience .experience-total .experience-4 div:nth-child(1) img {
+            transition: all 0.5s linear;
+            width: 95%;
+            height: 100%;
+        }
+
+        .experience .experience-total .experience-4 div:nth-child(1):hover img {
+            transform: scale(1.05);
+        }
+
+        /*experience-5*/
+        .experience .experience-total .experience-5 {
+            box-sizing: border-box;
+            width: 44%;
+            height: 950px;
+            padding: 30px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .experience .experience-total .experience-5 div:nth-child(1) {
+            max-width: 95%;
+            height: 700px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .experience .experience-total .experience-5 div:nth-child(1) img {
+            transition: all 0.5s linear;
+            width: 95%;
+            height: 100%;
+        }
+
+        .experience .experience-total .experience-5 div:nth-child(1):hover img {
+            transform: scale(1.05);
+        }
+
+        /*experience-1,2,3,4,5 글씨 전체 */
+        .experience .experience-total div div:nth-child(2) {
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        /*experience-1,2,3,4,5 글씨 h3, p */
+        .experience .experience-total div div:nth-child(2) h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .experience .experience-total div div:nth-child(2) p {
+            line-height: 1.5;
+            font-size: 1.0rem;
+        }
+
+        /*experience-1,2,3,4,5 사진 옆 세로 글씨*/
+        .experience .experience-total div div:nth-child(1) div {
+            writing-mode: vertical-rl;
+            position: absolute;
+            top: 8px;
+            right: 10px;
+
+        }

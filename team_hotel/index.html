@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title> 조선호텔앤리조트 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css">
+
+    <!--쇼트컷 아이콘-->
+    <link rel="shortcut icon" href="img/shourtcuticon.png" />
+    
+    <!--폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    
+    <!--header-->
+    <link rel="stylesheet" href="css/header.css" />
+    <!--아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!--예약창 css-->
+    <link rel="stylesheet" href="css/reservation.css" />
+
+    <!--메인화면 동영상-->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!--package-->
+    <link rel="stylesheet" href="css/package.css" />
+
+    <!--meet our hotel-->
+    <link rel="stylesheet" href="css/meetourhotel.css" />
+
+    <!--magazine-->
+    <link rel="stylesheet" href="css/magazine.css" />
+
+    <!--membership-->
+    <!--<link rel="stylesheet" href="css/membership.css" />-->
+    <link rel="stylesheet" href="css/tab.css" />
+
+    <!--풋터 링크-->
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!--햄버거 메뉴-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            $('.menubtn').click(function() {
+                $('.ham-menu').toggle();
+            });
+        });
+    </script>
+
+
+
+
+
+    <style>
+        html,
+        body {
+
+
+            /*슬라이드 위치 고정*/
+        }
+
+        body {
+            background: #242424;
+            font-family: ;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-total">
+        <div class="nav-total">
+            <div class="menubtn">
+                <div class="menubtn-1" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+                <script>
+                    function myFunction(x) {
+                        x.classList.toggle("change");
+                    }
+                </script>
+            </div>
+            <div class="ham-menu">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#">About US</a>
+                            <ul class="sub">
+                                <li><a href="#">기업소개</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">수상내역</a></li>
+                                <li><a href="#">오시는 길</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Hotels</a>
+                            <ul class="sub">
+                                <li><a href="hotel.html">그래비티 서울 판교</a></li>
+                                <li><a href="#">조선 팰리스</a></li>
+                                <li><a href="#">웨스턴 조선 서울</a></li>
+                                <li><a href="#">그랜드 조선 부산</a></li>
+                                <li><a href="#">레스케이프 호텔</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Offers</a>
+                            <ul class="sub">
+                                <li><a href="#">패키지</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">마인드 풀 스테이</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Facilities</a>
+                            <ul class="sub">
+                                <li><a href="wedding.html">웨딩</a></li>
+                                <li><a href="#">레스토랑</a></li>
+                                <li><a href="#">미팅룸</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Membership</a>
+                            <ul class="sub">
+                                <li><a href="#">Club Josun</a></li>
+                                <li><a href="#">소식</a></li>
+                                <li><a href="#">Event</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">My Page</a>
+                            <ul class="sub">
+                                <li><a href="#">멤버십 확인</a></li>
+                                <li><a href="#">예약확인</a></li>
+                                <li><a href="#">문의하기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header">
+            <div class="header1">
+                <div class="search">
+                    <a href="#">
+                        호텔찾기<span class="material-symbols-outlined">search</span>
+                    </a>
+                </div>
+                <div class="lang"><a href="#">KR &gt;</a></div>
+            </div>
+            <div class="header2"><a href="index.html"><img src="img/logo_jh_whitever.png"></a></div>
+            <div class="header3">
+                <div><a href="#">로그인</a></div>
+                <div><a href="#">예약확인</a></div>
+                <div><button>RESERVATION</button></div>
+            </div>
+        </div>
+    </div>
+    <div id="fullpage">
+
+        <div class="section">
+            <div class="main">
+                <div class="video-rgba"></div>
+                <video muted autoplay loop>
+                    <source src="img/hotelv.mp4" type="video/mp4" />
+                </video>
+                <div class="reservation">
+                    <!-- Surround the select box within a "custom-select" DIV element. Remember to set the width: -->
+                    <div class="room" style="width:200px;">
+                        <h4>ROOM</h4>
+                        <select>
+                            <option value="0">ROOM</option>
+                            <option value="1">DINING</option>
+                            <option value="2">MEMBERSHIP</option>
+                        </select>
+                    </div>
+                    <div class="hotel" style="width:200px;">
+                        <h4>HOTELS</h4>
+                        <select>
+                            <option value="0">조선펠리스</option>
+                            <option value="1">웨스틴 조선 서울</option>
+                            <option value="2">웨스틴 조선 부산</option>
+                            <option value="3">그랜드 조선 부산</option>
+                            <option value="4">그랜드 조선 제주</option>
+                            <option value="5">레스케이프 호텔</option>
+                            <option value="6">그래비티 서울 판교</option>
+                            <option value="7">포포인츠 바이 쉐라톤 조선 서울역</option>
+                        </select>
+                    </div>
+                    <div class="calender">
+                        <h4>CHECK IN/OUT</h4>
+                        <input type="date" class="currnetMonth">
+                        <input type="date" class="currnetMonth">
+
+                        <script type="text/javascript">
+                            window.onload = function() {
+                                today = new Date();
+                                console.log("today.toISOString() >>>" + today.toISOString());
+                                today = today.toISOString().slice(0, 10);
+                                console.log("today >>>> " + today);
+                                bir = document.getElementById(".currnetMonth");
+                                bir.value = today;
+                            }
+                        </script>
+                    </div>
+                    <div class="reservation-num">
+                        <div class="room">
+                            <h4>ROOM</h4>
+                            <input type="number" value="1" min="0" max="3">
+                        </div>
+                        <div class="adult">
+                            <h4>ADULTS</h4>
+                            <input type="number" value="2" min="0" max="12">
+                        </div>
+                        <div class="children">
+                            <h4>CHILDREN</h4>
+                            <input type="number" value="0" min="0" max="12">
+                        </div>
+                    </div>
+
+                    <button>SEARCH</button>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="position: relative; z-index: 80">
+            <div class="package-content">
+                <div class="package-box1">
+                    <div class="package-text">
+                        <h2>package</h2>
+                        <p>조선호텔앤리조트가 추천하는 패키지,<br>
+                            이곳에서만 볼 수 있는 꽉찬 구성을 만나보세요.</p>
+                    </div>
+                </div>
+                <div class="package-box2">
+                    <img src="img/1.jpg">
+                    <div class="overlay">
+                        <div>
+                            <h3>WINTER VOYAGE</h3>
+                            <p>조식 2인 + 피크포인트 또는 잇투오 풀사이드 세트 <br>[2박 이상 투숙 시] 조선델리 윈터 스위트 기프트 세트 1회</p>
+                            <button>
+                                <a href="#">
+                                    More View
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-box2">
+                    <img src="img/2.jpg">
+                    <div class="overlay">
+                        <div>
+                            <h3>BELOVED FRIENDS</h3>
+                            <p>사랑하는 반려견과 함께<br>
+                                도심 속 완벽한 휴식을 즐겨보세요.</p>
+                            <button>
+                                <a href="#">
+                                    More View
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-box2">
+                    <img src="img/3.jpg">
+                    <div class="overlay">
+                        <div>
+                            <h3>MINDFUL STAY</h3>
+                            <p>아름다운 자신의 의미있는 머무름, <br>조선호텔의 굿즈와 디저트로 하루를 선물해보세요</p>
+                            <button>
+                                <a href="#">
+                                    More View
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <a href="hotel.html">
+                        <div class="hotel-box">
+                            <img src="img/hotel9.jpg">
+                            <ul>
+                                <li>
+                                    <p>MEET OUR HOTEL</p>
+                                    <p>HERITAGE LEADS TO ONE FOR ALL</p>
+                                </li>
+                                <li>
+                                    <h5>Gravity Pan-gyo</h5>
+                                    <p>그래비티 판교</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="hotel-box">
+                        <img src="img/hotel1.jpg">
+                        <ul>
+                            <li>
+                                <p>MEET OUR HOTEL</p>
+                                <p>HERITAGE LEADS TO ONE FOR ALL</p>
+                            </li>
+                            <li>
+                                <h5>Josun Palace</h5>
+                                <p>조선 팰리스</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="hotel-box">
+                        <img src="img/hotel2.jpg">
+                        <ul>
+                            <li>
+                                <p>MEET OUR HOTEL</p>
+                                <p>HERITAGE LEADS TO ONE FOR ALL</p>
+                            </li>
+                            <li>
+                                <h5>The Westin Josun</h5>
+                                <p>웨스턴 조선 서울</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="hotel-box">
+                        <img src="img/hotel6.jpg">
+                        <ul>
+                            <li>
+                                <p>MEET OUR HOTEL</p>
+                                <p>HERITAGE LEADS TO ONE FOR ALL</p>
+                            </li>
+                            <li>
+                                <h5>Grand Josun Busan</h5>
+                                <p>그랜드 조선 부산 </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="hotel-box">
+                        <img src="img/hotel10.jpg">
+                        <ul>
+                            <li>
+                                <p>MEET OUR HOTEL</p>
+                                <p>HERITAGE LEADS TO ONE FOR ALL</p>
+                            </li>
+                            <li>
+                                <h5>L'escape Hotel</h5>
+                                <p>레스케이프 호텔</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+        <div class="section">
+            <div class="magazine-content">
+                <div class="magazine-box2">
+                    <img src="img/7.jpg" alt="Avatar" class="image">
+                    <div class="overlay2">
+                        <div>
+                            <h3>THE COMPLETE BUFFET</h3>
+                            <p>늘 궁금했던 조선호텔 뷔페의 비하인드 스토리</p>
+                            <button>
+                                <a href="#">
+                                    More View
+                                </a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="magazine-box2">
+                    <img src="img/4.jpg" alt="Avatar" class="image">
+                    <div class="overlay2">
+
+                        <div>
+                            <h3>EXTRAORDINARY DAY</h3>
+                            <p>하나의 특별한 웨딩을 위한 호텔의 시간과 노력</p>
+                            <button>
+                                <a href="#">
+                                    More View
+                                </a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="magazine-box2">
+                    <img src="img/5.jpg" alt="Avatar" class="image">
+                    <div class="overlay2">
+
+                        <div>
+                            <h3>THE DESIGNER'S VIEW</h3>
+                            <p>그랜드 조선, 조선 팰리스 인테리어 디자이너와의 대화</p>
+                            <button>
+                                <a href="#">
+                                    More View
+                                </a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="magazine-box1">
+                    <div class="magazine-text">
+                        <h2>JOSUN<br>MAGAZINE</h2>
+                        <p>조선호텔앤리조트가 만드는 매거진,<br>누구나 편하게 볼 수 있는 이야기를 소개합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="membership-content">
+                <div class="membership-box1">
+                    <h2>CLUB JOSUN</h2>
+                    <p>품격 있는 서비스와 다채로운 라이프 스타일을 선사하는 통합 멤버십 프로그램 <br>
+                        지금 회원만을 위한 특별한 경험을 확인해보세요.
+                    </p>
+                    <button>
+                        <a href="#">
+                            More View
+                        </a>
+                    </button>
+                </div>
+
+                <div class="membership">
+                    <div id="premier" class="tabcontent">
+                        <h3>PREMIER</h3>
+                        <div>
+                            <div class="card-img">
+                                <img src="img/mem-premier.png">
+                            </div>
+                            <div class="card-text">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>객실숙박권</li>
+                                            <li>1 NIGHT</li>
+                                            <li>스탠다드형 1매</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>금액할인권</li>
+                                            <li>50,000</li>
+                                            <li>객실·레스토랑 사용 가능</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>할인 특전</li>
+                                            <li>객실·레스토랑</li>
+                                            <li>상시 할인 제공</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>금액 할인권</li>
+                                            <li>100,000</li>
+                                            <li>객실·레스토랑 사용가능</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="gold" class="tabcontent">
+                        <h3>GOLD</h3>
+                        <div>
+                            <div class="card-img">
+                                <img src="img/mem-gold.png">
+                            </div>
+                            <div class="card-text">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>객실할인권</li>
+                                            <li>60%</li>
+                                            <li>할인권 3매</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>뷔페 이용권</li>
+                                            <li>1 TICKET</li>
+                                            <li>2인 이용권 1매</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>금액 할인권</li>
+                                            <li>200,000</li>
+                                            <li>객실·레스토랑 사용가능</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>할인 특전</li>
+                                            <li>객실·레스토랑</li>
+                                            <li>상시 할인 제공</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="platinum" class="tabcontent">
+                        <h3>PLATINUM</h3>
+                        <div>
+                            <div class="card-img">
+                                <img src="img/mem-platinum.png">
+                            </div>
+                            <div class="card-text">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>객실숙박권</li>
+                                            <li>1 NIGHT</li>
+                                            <li>프리미엄형 1매</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>객실할인권</li>
+                                            <li>60 %</li>
+                                            <li>할인권 1매</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>레스토랑 할인권</li>
+                                            <li>30 %</li>
+                                            <li>FOOD 30% 할인권 1매</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>금액 할인권</li>
+                                            <li>350,000</li>
+                                            <li>객실·레스토랑 사용가능</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="black" class="tabcontent">
+                        <h3>BLACK</h3>
+                        <div>
+                            <div class="card-img">
+                                <img src="img/mem-black.png">
+                            </div>
+                            <div class="card-text">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>객실 숙박권</li>
+                                            <li>2 NIGHT</li>
+                                            <li>프리미엄형 2매</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>객실할인권</li>
+                                            <li>60~80 %</li>
+                                            <li>할인권 2매</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>레스토랑 할인권</li>
+                                            <li>30 %</li>
+                                            <li>FOOD 30% 할인권 1매</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>금액 할인권</li>
+                                            <li>700,000</li>
+                                            <li>객실·레스토랑 사용가능</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="tablink" onclick="openCity('premier', this, '#34464e')" id="defaultOpen">PREMIER</button>
+                    <button class="tablink" onclick="openCity('gold', this, '#433539')">GOLD</button>
+                    <button class="tablink" onclick="openCity('platinum', this, '#143545')">PLATINUM</button>
+                    <button class="tablink" onclick="openCity('black', this, '#1a171e')">BLACK</button>
+                </div>
+                <script>
+                    function openCity(cityName, elmnt, color) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablink");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].style.backgroundColor = "";
+                        }
+                        document.getElementById(cityName).style.display = "block";
+                        elmnt.style.backgroundColor = color;
+
+                    }
+                    // Get the element with id="defaultOpen" and click on it
+                    document.getElementById("defaultOpen").click();
+                </script>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
+            <div class="foot">
+                <div class="leftf">
+                    <a href="index.html"><img src="img/logo_footer.png"></a>
+                </div>
+                <div class="centerf">
+                    <div class="ctf1">
+                        <ul class="first">
+                            <li>웹사이트이용약관</li>
+                            <li>개인정보처리방침</li>
+                            <li>이메일무단 수집 금지</li>
+                        </ul>
+                    </div>
+                    <div class="ctf2">
+                        <ul class="second">
+                            <li>영상정보처리기기 운영, 관리방침</li>
+                            <li>멤버십 이용약관</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="ctf3">
+                        <p>서울시 중구 소공로 106 대표이사 한채양 t. 02-771-0500<br>
+                            사업자등록번호 104-81-27386 통신판매신고번호 중구 0623호<br>
+                            2020 JOSUN HOTEL RESORTS Co. All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="rightf">
+                    <img src="img/footer-ins.png">
+                    <img src="img/footer-face.png">
+                    <img src="img/footer-you.png">
+                    <img src="img/footer-kaka.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        new fullpage('#fullpage', {
+            sectionsColor: ['#242424', '#242424', '#242424', '#242424', '#242424', '#161616'],
+
+            // Get your license at https://alvarotrigo.com/fullPage/pricing/
+            licenseKey: 'YOUR LICENSE KEY HERE '
+        });
+
+        document.querySelector('.show-content').addEventListener('click', showContent);
+
+        function showContent() {
+            document.querySelector('.extra-content').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
