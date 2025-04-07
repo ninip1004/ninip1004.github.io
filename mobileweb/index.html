@@ -1,0 +1,555 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>다님길 main</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!--demo slide-->
+    <style>
+    .swiper {
+        width: 280px;
+        height: 200px;
+      }
+
+      .swiper-slide {
+        
+    text-align: center;
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap,4px);
+}
+
+    .swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,8px));
+    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,8px));
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--swiper-pagination-bullet-inactive-color,#000);
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+}
+          
+          .swiper-pagination-bullet:root{
+              --swiper-theme-color: #a26f53;
+          }
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+        
+        
+        .swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate(0,8px);
+    z-index: 10;
+}
+        
+        
+        
+
+    .sw{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .sw img{
+        width: 70%;
+        height: 60%;
+        border-radius: 100px 100px;
+        margin-top:20px;
+    }
+     .new_sw img{
+        width: 90%;
+        height: 40%;
+        border-radius: 100px 100px;
+        margin-top:20px;
+    }
+    .sw p{
+        font-size:0.5rem;  
+        margin-top:5px;
+    }
+    .bold{
+        font-weight:bold;
+    }
+
+    </style>
+    
+</head>
+<body>
+
+<div class="w">
+
+    <!--header-->
+<header>
+    <div class="logo"><img src="img/logo.png"></div>
+    <div class="cart"><img src="img/cart.png"></div>
+</header>
+    
+<div class="main">
+    <img src="img/mainbanner.jpg">
+    <div class="main_text">
+    <h2>도심속 색다른 이색카페 즐기기</h2>
+    <p><span>신규카페</span>로멘틱뮤지엄</p>
+    </div>
+</div>
+    
+    
+    <!--ct 시작-->
+<div class="ct">
+
+
+<div class="ct_main">
+    <h2>다님길과 함께하는 카페 노트</h2>
+</div>
+    
+<div class="contents">
+    <!--배경에 체크 깔기--> 
+    
+    <!--main 내용 시작-->  
+<div class="ct_body">
+    <!--배경에 링 깔기-->
+    
+    
+<!--main 시작-->    
+    <!--new 신상카페 시작-->
+<div class="start">
+<div class="new">
+    <div class="title">
+        <h3>신상카페</h3>
+        <img src="img/Arrow.png"><!--화살표-->
+    </div>
+    <div class="subtitle">
+        <h4>새로 추가된 신상카페</h4>
+    </div>
+    
+    
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw new_sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+
+        </div>
+                  
+          
+      </div>
+        <!--슬라이드 버튼-->
+          
+      <div class="swiper-pagination"></div>
+    </div>
+    
+    
+</div>
+    <!--new 끝-->
+    
+    <!--neer 근처시작-->
+<div class="neer">
+    <div class="title">
+        <h3>내 근처 카페</h3>
+        <img src="img/Arrow.png"><!--화살표-->
+    </div>
+    <div class="subtitle">
+        <h4>새로 추가된 신상카페</h4>
+    </div>
+    
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+
+          
+          
+      </div>
+        <!--슬라이드 버튼-->
+          
+      <div class="swiper-pagination"></div>
+        
+    </div>
+    
+</div>
+    <!--neer 근처 끝-->
+    
+    <!--review 리뷰 시작-->
+<div class="review">
+    <div class="title">
+        <h3>카페 人 리뷰</h3>
+        <img src="img/Arrow.png"><!--화살표-->
+    </div>
+    <div class="subtitle">
+        <h4>새로 추가된 신상카페</h4>
+    </div>
+    
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        
+          
+          <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 3구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 3구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 3구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 3구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+          
+          
+        <div class="swiper-slide">
+            <div class="sw">
+                <img src="img/romantic.jpeg">
+                <p class="bold">알엘카페</p>
+                <p>대구 중구</p>
+            </div>
+            
+        </div>
+        
+          
+      </div>
+        <!--슬라이드 버튼-->
+          
+      <div class="swiper-pagination"></div>
+    </div>
+    
+    
+    
+</div>
+    <!--review 리뷰 끝-->
+    
+    <!--Ranking 랭킹 시작-->
+<div class="ranking">
+    <div class="title">
+        <h3>랭킹 TOP 10</h3>
+        <img src="img/Arrow.png"><!--화살표-->
+    </div>
+
+    <div class="subtitle">
+        <h4>새로 추가된 신상카페</h4>
+    </div>
+    
+    <div class="rank_img">
+        <img>
+        <img>
+        <img>
+    </div><!--랭킹이미지-->
+    
+    <table>
+        
+        <tr>
+            <th class="number">1위</th>
+            <th>로프커피</th>
+            <td>#라떼아트  #분위기 좋은  #인테리어</td>
+        </tr>
+        
+        <tr>
+            <th class="number">2위</th>
+            <th>로프커피</th>
+            <td>#라떼아트  #분위기 좋은  #인테리어</td>
+        </tr>
+        
+        <tr>
+            <th class="number">3위</th>
+            <th>로프커피</th>
+            <td>#라떼아트  #분위기 좋은  #인테리어</td>
+        </tr>
+        
+    </table>
+    
+    
+    
+    
+</div>
+    <!--Ranking 랭킹 끝-->
+    
+    
+    
+</div>
+<!--contents 끝-->
+</div>
+</div>
+    
+</div>
+<!--w 끝-->
+</div><!--ct_body 끝-->
+    
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+</body>
+</html>
