@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>EPUB 뷰어</title>
+  <script src="https://unpkg.com/epubjs/dist/epub.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #viewer {
+      width: 100%;
+      height: 100vh;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<div id="viewer"></div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const bookUrl = params.get("book");
+
+  if (!bookUrl) {
+    document.getElementById("viewer").innerText = "EPUB 파일 경로가 없습니다.";
+  } else {
+    const book = ePub(bookUrl);
+    const rendition = book.renderTo("viewer", {
+      width: "100%",
+      height: "100%",
+    });
+    rendition.display().catch(err => {
+      document.getElementById("viewer").innerText = "EPUB 로딩 실패: " + err.message;
+    });
+  }
+</script>
+
+</body>
+</html>
