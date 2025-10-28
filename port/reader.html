@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPUB Reader</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #4a90e2;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .controls {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            background: #dee2e6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #viewer {
+            width: 100%;
+            height: 600px;
+            background: #fefefe;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e9ecef;
+            border-top: 4px solid #4a90e2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            margin: 20px 30px;
+            display: none;
+            white-space: pre-line;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .book-info {
+            display: none;
+            background: #e3f2fd;
+            padding: 15px 30px;
+            border-bottom: 1px solid #e1f5fe;
+        }
+
+        .book-info h3 {
+            color: #1565c0;
+            margin-bottom: 5px;
+        }
+
+        .book-info p {
+            color: #424242;
+            margin: 2px 0;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .navigation {
+                justify-content: center;
+            }
+
+            #viewer {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 EPUB Reader</h1>
+        </div>
+        
+        <div class="controls">
+            <div class="navigation">
+                <button class="nav-btn" id="prevBtn" disabled>← Previous</button>
+                <button class="nav-btn" id="nextBtn" disabled>Next →</button>
+            </div>
+        </div>
+
+        <div class="book-info" id="bookInfo">
+            <h3 id="bookTitle"></h3>
+            <p><strong>Author:</strong> <span id="bookAuthor"></span></p>
+            <p><strong>Publisher:</strong> <span id="bookPublisher"></span></p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <div id="viewer">
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p>Loading EPUB...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class EPUBReader {
+            constructor() {
+                this.book = null;
+                this.rendition = null;
+                this.currentLocation = null;
+                this.isLoading = false;
+                
+                this.initializeElements();
+                this.bindEvents();
+                this.autoLoadEpub();
+            }
+
+            initializeElements() {
+                this.elements = {
+                    viewer: document.getElementById('viewer'),
+                    prevBtn: document.getElementById('prevBtn'),
+                    nextBtn: document.getElementById('nextBtn'),
+                    errorMessage: document.getElementById('errorMessage'),
+                    loadingIndicator: document.getElementById('loadingIndicator'),
+                    bookInfo: document.getElementById('bookInfo'),
+                    bookTitle: document.getElementById('bookTitle'),
+                    bookAuthor: document.getElementById('bookAuthor'),
+                    bookPublisher: document.getElementById('bookPublisher')
+                };
+            }
+
+            bindEvents() {
+                this.elements.prevBtn.addEventListener('click', () => this.previousPage());
+                this.elements.nextBtn.addEventListener('click', () => this.nextPage());
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (this.rendition) {
+                        if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                            e.preventDefault();
+                            this.previousPage();
+                        } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+                            e.preventDefault();
+                            this.nextPage();
+                        }
+                    }
+                });
+            }
+
+            autoLoadEpub() {
+                // Automatically load t.epub file on page load
+                this.loadEpubFromUrl('t.epub');
+            }
+
+            showError(message) {
+                this.elements.errorMessage.textContent = message;
+                this.elements.errorMessage.style.display = 'block';
+                setTimeout(() => {
+                    this.elements.errorMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            showLoading(message = 'Loading...') {
+                this.elements.loadingIndicator.querySelector('p').textContent = message;
+                this.elements.loadingIndicator.style.display = 'flex';
+            }
+
+            hideLoading() {
+                this.elements.loadingIndicator.style.display = 'none';
+            }
+
+            async loadEpubFromUrl(url) {
+                if (this.isLoading) return;
+                
+                this.isLoading = true;
+                this.showLoading(`Loading "${url}"...`);
+                
+                try {
+                    console.log('EPUB URL에서 로드 시작:', url);
+                    
+                    // Fetch the EPUB file from URL
+                    const response = await fetch(url);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status} - 파일을 찾을 수 없습니다.`);
+                    }
+                    
+                    const arrayBuffer = await response.arrayBuffer();
+                    console.log('EPUB 파일 다운로드 완료, 크기:', arrayBuffer.byteLength, 'bytes');
+                    
+                    // Clean up any existing rendition
+                    if (this.rendition) {
+                        this.rendition.destroy();
+                        this.rendition = null;
+                    }
+                    
+                    // Create new book instance
+                    this.book = ePub(arrayBuffer);
+                    
+                    // Wait for book to be ready
+                    await this.book.ready;
+                    console.log('EPUB 파일 파싱 완료');
+                    
+                    // Load book metadata
+                    await this.displayBookInfo();
+                    
+                    // Clear the viewer first
+                    this.elements.viewer.innerHTML = '';
+                    
+                    // Create rendition
+                    this.rendition = this.book.renderTo(this.elements.viewer, {
+                        width: "100%",
+                        height: "100%",
+                        spread: "auto",
+                        snap: true,
+                        allowScriptedContent: true
+                    });
+                    
+                    // Set up event listeners
+                    this.rendition.on('relocated', (location) => {
+                        console.log('페이지 이동:', location);
+                        this.currentLocation = location;
+                        this.updateNavigation();
+                    });
+                    
+                    this.rendition.on('rendered', (section) => {
+                        console.log('렌더링 완료:', section);
+                        this.hideLoading();
+                    });
+                    
+                    this.rendition.on('started', (location) => {
+                        console.log('렌더링 시작');
+                    });
+                    
+                    // Display the first page
+                    await this.rendition.display();
+                    console.log('첫 페이지 표시 완료');
+                    
+                    // Enable navigation buttons
+                    this.elements.prevBtn.disabled = false;
+                    this.elements.nextBtn.disabled = false;
+                    
+                } catch (error) {
+                    console.error('EPUB URL 로드 중 오류:', error);
+                    let errorMessage = `Failed to load EPUB from "${url}": ${error.message}`;
+                    
+                    if (error.message.includes('404') || error.message.includes('찾을 수 없습니다')) {
+                        errorMessage += '\n\n파일이 같은 폴더에 있는지 확인해주세요.';
+                    } else if (error.message.includes('CORS') || error.message.includes('cross-origin')) {
+                        errorMessage += '\n\nCORS 정책으로 인해 로컬 서버에서 실행해야 할 수 있습니다.';
+                    }
+                    
+                    this.showError(errorMessage);
+                    this.hideLoading();
+                } finally {
+                    this.isLoading = false;
+                }
+            }
+
+            async displayBookInfo() {
+                try {
+                    const metadata = await this.book.loaded.metadata;
+                    console.log('책 메타데이터:', metadata);
+                    
+                    this.elements.bookTitle.textContent = metadata.title || 'Unknown Title';
+                    this.elements.bookAuthor.textContent = metadata.creator || 'Unknown Author';
+                    this.elements.bookPublisher.textContent = metadata.publisher || 'Unknown Publisher';
+                    this.elements.bookInfo.style.display = 'block';
+                } catch (error) {
+                    console.warn('책 메타데이터 로드 실패:', error);
+                    // Show basic info even if metadata fails
+                    this.elements.bookTitle.textContent = 'EPUB Book';
+                    this.elements.bookAuthor.textContent = 'Unknown Author';
+                    this.elements.bookPublisher.textContent = 'Unknown Publisher';
+                    this.elements.bookInfo.style.display = 'block';
+                }
+            }
+
+            updateNavigation() {
+                if (!this.currentLocation) return;
+                
+                this.elements.prevBtn.disabled = this.currentLocation.atStart;
+                this.elements.nextBtn.disabled = this.currentLocation.atEnd;
+            }
+
+            async previousPage() {
+                if (this.rendition && !this.elements.prevBtn.disabled) {
+                    await this.rendition.prev();
+                }
+            }
+
+            async nextPage() {
+                if (this.rendition && !this.elements.nextBtn.disabled) {
+                    await this.rendition.next();
+                }
+            }
+        }
+
+        // Initialize the EPUB reader when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new EPUBReader();
+        });
+    </script>
+</body>
+
+</html>

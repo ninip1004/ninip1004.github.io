@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main첫페이지</title>
+    <link rel="stylesheet" href="stylejs.css">
+ </head>
+  <body>
+    <main id="home">
+      <header>
+        <div class="head">
+          <div class="logo"><a href="#home">PORTFOLIO</a></div>
+          <nav>
+            <ul>
+              <li><a href="#home"> Home </a></li>
+              <li><a href="#about"> About </a></li>
+              <li><a href="#project1"> Portfolio I</a></li>
+              <li><a href="#project2"> Portfolio II</a></li>
+              <li><a href="#contact"> Contact </a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="hero">
+        <h1>Welcome to my portfolio.</h1>
+        <h2>creative works</h2>
+      </div>
+    </main>
+
+    <section id="about">
+      <h2 class="title">About</h2>
+      <div><img src="img/about/about.png" /></div>
+    </section>
+
+   <!-- 프로젝트 섹션 -->
+  <section id="project1">
+    <h2 class="title">Design Edit</h2>
+    <div class="gallery">
+      <div class="box" onclick="openModal('project1')">
+        <img src="img/portfolio/box.jpg" alt="프로젝트 1" class="thumbnail">
+        <p> Edit Design </p>
+      </div>
+      <div class="box" onclick="openModal('project2')">
+        <img src="img/portfolio/let.jpg" alt="프로젝트 2" class="thumbnail">
+        <p> Edit Design </p>
+      </div>
+      <div class="box" onclick="openModal('project3')">
+       <img src="img/portfolio/name.png" alt="프로젝트 3" class="thumbnail">
+       <p> Edit Design </p>
+      </div>
+      <div class="box" onclick="openModal('project4')">
+        <img src="img/portfolio/logo1.png" alt="프로젝트 4" class="thumbnail"> 
+         <p> Edit Design </p>
+      </div>
+      <div class="box" onclick="openModal('project5')">
+        <img src="img/portfolio/logo1.png" alt="프로젝트 5" class="thumbnail">
+         <p> Edit Design </p>
+      </div>
+      <div class="box" onclick="openModal('project6')">
+        <img src="img/portfolio/logo1.png" alt="프로젝트 6" class="thumbnail">
+         <p> Edit Design </p>
+      </div>
+       <div class="box" onclick="openModal('project7')">
+        <img src="img/portfolio/logo1.png" alt="프로젝트 5" class="thumbnail">
+         <p> Edit Design </p>
+      </div>
+      <div class="box" onclick="openModal('project8')">
+        <img src="img/portfolio/logo1.png" alt="프로젝트 6" class="thumbnail">
+         <p> Edit Design </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 프로젝트 섹션 2 -->
+  <section id="project2">
+    <section id="project2-1">
+      <h2> Ebook project : Sigil editor </h2>
+      <h3> </h3>
+      <div class="web-project">
+        <div class="wp-left">
+          <img src="img/portfolio/port05.jpg">
+          <p> <a href="ebook.pdf" class="btn">  기획서 보기  </a>
+              <a href="reader.html" class="btn">  Ebook View  </a>
+          </p>
+        </div>
+        <div class="wp-right">
+          <h3> Ooo Ebook Publishing </h3>
+          <p> <b> Period </b>: 2025. 04. 04 </p>
+          <p> <b> Type :</b> epub file </p>
+          <p> <b> Output :</b> Sigil, photoshop, xhtml, css </p>
+          <p> <b> OVERVIEW :</b></p>
+          <p> 최소한의 루틴으로 그 본연의 가치를 살리려는 노력, 진정한 아름다움을 위해 브랜드를 운영하는 company,
+            'ooo라는 슬로건으로 ooo의 도전 정신을 사이트에 담아보았습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="project2-2">
+      <h2> Shoppingmal project : Cafe24 </h2>
+      <h3> </h3>
+      <div class="web-project">
+        <div class="wp-left">
+          <img src="img/portfolio/shop.jpg">
+          <p> <a href="shopedit.pdf" class="btn">  기획서 보기  </a>
+              <a href="https://id.cafe24.com" class="btn"> Shoppingmal View </a>
+          </p>
+        </div>
+        <div class="wp-right">
+          <h3>Shoppingmal Publishing </h3>
+          <p> <b> Period </b>: 2027. 02. 02 </p>
+          <p> <b> Type :</b> web </p>
+          <p> <b> Output :</b> cafe24, photoshop </p>
+          <p> <b> OVERVIEW :</b></p>
+          <p> 최소한의 루틴으로 그 본연의 가치를 살리려는 노력, 진정한 아름다움을 위해 브랜드를 운영하는 company,
+            'ooo라는 슬로건으로 ooo의 도전 정신을 사이트에 담아보았습니다.
+          </p>
+        </div>
+      </div>
+     </section>
+  </section>
+  
+    <!-- 연락처 섹션 -->
+    <footer id="contact">
+      <p>© 2025 My Portfolio | 이메일: myemail@example.com</p>
+      <ul class="social-links">
+        <li><a href="#">Phone</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </footer>
+
+    <!-- 모달 창 -->
+    <div id="modal" class="modal" onclick="closeModalOnOutside(event)">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="modal.js"></script>
+  </body>
+</html>
